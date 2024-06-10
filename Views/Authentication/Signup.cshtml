@@ -1,0 +1,59 @@
+﻿@model Physiosoft.DTO.User.UserSignupDTO
+@{
+    Layout = null;
+    ViewData["Title"] = "Signup";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/Signup.css" />
+    <title>Signup</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="signup-container">
+            <form class="signup-form" asp-controller="Authentication" asp-action="Signup" method="Post">
+                <h3 class="text-center mb-4">Create Account</h3>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="d-grid mb-2">
+                    <button type="submit" class="btn btn-primary">Signup</button>
+                </div>
+            </form>
+            <div class="text-center">
+                <a href="~/Authentication/Login" class="custom-link">Login</a>
+            </div>
+
+            <div class="text-center mt-4">
+                @if (ViewData["ErrorsArray"] != null)
+                {
+                    var errorsArray = ViewData["ErrorsArray"] as List<Error>;
+                    @if (errorsArray is not null)
+                    {
+                        @foreach (var error in errorsArray)
+                        {
+                            <div class="text-danger">
+                                <p>@error.Message</p>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

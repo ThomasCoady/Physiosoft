@@ -1,0 +1,55 @@
+html {
+  font-size: 14px;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+    background-color: #f7f7f7; /* Light grey background */
+    color: #6c757d; /* Slightly muted text color */
+    padding: 20px 0; /* Padding on top and bottom */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Consistent font style */
+}
+
+.footer a {
+color: #0078d4; /* Blue color for links */
+text-decoration: none; /* No underline */
+}
+
+.footer a:hover {
+    color: #005a9e; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
+.container {
+    text-align: center; /* Center the content for a modern look */
+}
+
+.content-area {
+    margin-bottom: 100px; /* Adjust the value based on the height of your footer */
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+}
